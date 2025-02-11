@@ -1,0 +1,17 @@
+name: Test shared workflow with composite
+
+on:
+  pull_request:
+  release:
+    types:
+      - prereleased
+  push:
+    branches:
+      - main
+
+jobs:
+  say-hello:
+    uses: "toshi38/shared-workflow-demo-1/.github/workflows/shared_workflow.yaml@92aa40ee9293a24852ef0be825070275d78281bd"
+    with:
+      who: "octocat"
+      ref: "92aa40ee9293a24852ef0be825070275d78281bd"
